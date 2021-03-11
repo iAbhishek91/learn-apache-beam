@@ -26,6 +26,12 @@ CHARACTERISTICS:
 - **Operation Type**: Grain operation is not supported. Cant apply operation on partial or individual element. Its applied to the entire PCollection as a whole.
 - **Time stamp**: each element in  a PCollection has an associated timestamp with it. Its very crucial part in beam processing (for implementing watermarking, windowing, and for handling late arrival of data). Time stamp can be assigned in many ways (source can provide, beam can provide, user can provide)
 
+## Bundle
+
+Note entire PCollection are not processed as a whole. Internally, beam will divide the entire collection and make them process in parallel(this key and obvious for distributed system).
+
+Note user can explicitly mention the bundle size while importing the data set.
+
 ## PTransform
 
 Represent a data processing operation or a step in our pipeline.
